@@ -1,0 +1,35 @@
+#-----------log------------
+logging:
+  config: classpath:logback-spring.xml
+#----------web container---------
+server:
+  port: 8082
+  servlet:
+    context-path:
+#--------spring--------
+spring:
+  datasource:
+    name: dataSource
+    url: jdbc:mysql://117.50.71.129:3306/gktb?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+  mvc:
+    view:
+      prefix: classpath:/templates/
+      suffix: .html
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+#---------------mybatis--------------
+mybatis:
+  mapper-locations: classpath:mappers/**/*.xml
+#---------------pagehelper--------------
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
